@@ -123,8 +123,6 @@
           (task-fn :change defer-info)
           (recur :tell-dependents))))))
 
-(declare call-with-integrity)
-
 (defmacro with-integrity [[opcode info] & body]
   `(call-with-integrity
      ~opcode
@@ -205,4 +203,3 @@
                     (ufb-assert-q-empty :change)
                     (swap! wi-depth dec)
                     (dpx :cwi-out!! opcode @wi-depth))))))))
-

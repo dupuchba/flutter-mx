@@ -16,8 +16,6 @@
   (or (and a (not b))
     (and b (not a))))
 
-(declare pln xpln)
-
 (defn set-ify [x]
   (cond
     (nil? x) #{}
@@ -164,5 +162,3 @@
 
 (defn difference [s so]
   (set (remove so s)))
-
-
